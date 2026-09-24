@@ -1,0 +1,524 @@
+/* ============================================================
+   陈星浩 · 求职个人主页 style.css
+   风格：IT 应届生简约科技风（低饱和蓝灰）
+   说明：每一段样式都带注释，方便逐行读懂、亲手修改
+   ============================================================ */
+
+/* ---------- 01 配色变量：整套页面的颜色都定义在这里，改这里即可换主题 ---------- */
+:root {
+  --primary: #3D6B8E;        /* 主色：低饱和蓝灰 */
+  --primary-deep: #274C6B;   /* 深主色：用于标题、hover */
+  --accent: #6FA3C9;         /* 辅色：浅蓝灰，用于高亮数字/标签 */
+  --bg: #F3F6FA;             /* 页面背景：浅灰蓝 */
+  --card: #FFFFFF;           /* 卡片背景：白色 */
+  --text: #24323D;           /* 正文颜色：深蓝灰 */
+  --text-light: #5F7280;     /* 次要文字颜色 */
+  --border: #DCE4EC;         /* 边框与分隔线 */
+  --shadow: 0 3px 12px rgba(39, 76, 107, 0.08); /* 卡片阴影 */
+  --radius: 14px;            /* 统一圆角 */
+}
+
+/* ---------- 02 基础重置：清掉浏览器默认内外边距，统一盒模型 ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 点击导航锚点时页面平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ---------- 03 顶部导航：固定在顶部，方便跳到任意模块 ---------- */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92); /* 半透明白底，滚动时能看到下面的内容 */
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);            /* 毛玻璃效果，可选，不影响功能 */
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav-brand {
+  font-weight: 700;
+  color: var(--primary-deep);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* 导航链接悬停变主色 */
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ---------- 04 banner 头部：背景图来自 assets/banner.png（即梦 AI 生成） ---------- */
+.banner {
+  min-height: 400px;
+  background: url("./assets/banner.png") center / cover no-repeat; /* 相对路径，本地与 Gitee Pages 都可用 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.banner-content h1 {
+  font-size: 2.8rem;
+  color: var(--primary-deep);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.banner-slogan {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.banner-sub {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 22px;
+}
+
+/* 主按钮：banner 里的"查看我的主页" */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s; /* 悬停背景渐变过渡 */
+}
+
+.btn-primary:hover {
+  background: var(--primary-deep);
+}
+
+/* ---------- 05 主体容器与卡片 ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+/* 每个模块都是一张白色圆角卡片 */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 30px;
+  margin-bottom: 26px;
+}
+
+/* 学习日志卡片用浅蓝底色，与其它模块区分（进阶挑战1） */
+.card-accent {
+  background: #EEF4FA;
+  border-left: 4px solid var(--accent);
+}
+
+/* 模块标题：编号 + 名称 */
+.card-title {
+  font-size: 1.3rem;
+  color: var(--primary-deep);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* 标题前的模块编号小方块 */
+.num {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  padding: 1px 9px;
+  margin-right: 10px;
+  vertical-align: 2px;
+}
+
+/* ---------- 06 个人信息：头像 + 信息列表 ---------- */
+.about-grid {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* 头像：圆形、带边框 */
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.info-list {
+  list-style: none;
+  flex: 1;
+  min-width: 260px;
+}
+
+.info-list li {
+  padding: 5px 0;
+}
+
+/* 复制邮箱小按钮 */
+.btn-copy {
+  margin-left: 8px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  background: #EAF1F8;
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* 复制成功时的提示状态 */
+.btn-copy.copied {
+  background: #DCEFDF;
+  border-color: #6FBF84;
+  color: #2E7D46;
+}
+
+.btn-copy:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- 07 求职意向 ---------- */
+.intention-list {
+  list-style: none;
+}
+
+.intention-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.intention-list li:last-child {
+  border-bottom: none;
+}
+
+/* 标签：小圆角色块 */
+.tag {
+  display: inline-block;
+  background: #EAF1F8;
+  color: var(--primary);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  padding: 1px 10px;
+  margin-right: 12px;
+  min-width: 76px;
+  text-align: center;
+}
+
+/* ---------- 08 专业技能：卡片网格，两列排布 ---------- */
+.skill-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 桌面端两列 */
+  gap: 16px;
+}
+
+.skill-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  transition: transform 0.25s, box-shadow 0.25s; /* hover 轻微上浮 */
+}
+
+/* hover 效果：卡片浮起 + 阴影加深（亲手加的交互） */
+.skill-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(39, 76, 107, 0.12);
+}
+
+.skill-item h3 {
+  font-size: 1rem;
+  color: var(--primary-deep);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-item p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* 技能等级标签：熟练=绿、了解=灰蓝 */
+.level {
+  font-size: 0.72rem;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 0 9px;
+}
+
+.level-good { background: #DCEFDF; color: #2E7D46; }
+.level-basic { background: #E4EBF2; color: var(--text-light); }
+
+/* ---------- 09 实训项目：每个项目一张小卡片 ---------- */
+.project {
+  border-left: 4px solid var(--accent); /* 左侧竖线强调 */
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.project h3 {
+  font-size: 1.05rem;
+  color: var(--primary-deep);
+}
+
+.project-meta {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.project p {
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+/* 项目里的数字指标：突出显示 */
+.metric {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  background: #EAF1F8;
+  border-radius: 6px;
+  padding: 2px 12px;
+}
+
+.metric b {
+  font-size: 1.05rem;
+  color: var(--primary-deep);
+}
+
+/* ---------- 10 教育背景 ---------- */
+.edu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.edu h3 {
+  color: var(--primary-deep);
+  font-size: 1.05rem;
+}
+
+.edu p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+.edu-list {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+
+/* ---------- 11 证书荣誉：证书名 + 时间，两端对齐 ---------- */
+.honor-list {
+  list-style: none;
+}
+
+.honor-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.honor-list li:last-child {
+  border-bottom: none;
+}
+
+.honor-name {
+  font-size: 0.95rem;
+}
+
+.honor-date {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 1px 12px;
+}
+
+/* ---------- 12 自我评价：重点数字加粗加色 ---------- */
+.self-text {
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.self-text b {
+  color: var(--primary);
+}
+
+/* ---------- 13 学习日志（进阶挑战1） ---------- */
+.learning-list {
+  padding-left: 22px;
+  font-size: 0.95rem;
+}
+
+.learning-list li {
+  padding: 6px 0;
+}
+
+/* ---------- 14 底部与简历下载按钮（进阶挑战3） ---------- */
+.footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+/* 下载按钮：链接指向 ./assets/resume.pdf，download 属性触发下载 */
+.btn-download {
+  display: inline-block;
+  padding: 13px 40px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-download:hover {
+  background: var(--primary-deep);
+  transform: translateY(-2px);
+}
+
+.footer-note {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+/* 主页二维码 + URL（第5册上线：进阶挑战1） */
+.qr-block {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.qr-img {
+  width: 108px;
+  height: 108px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.qr-text {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.7;
+  text-align: left;
+}
+
+.qr-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.qr-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   进阶挑战2：响应式（media query）
+   屏幕宽度 <= 600px 时，两列网格变一列，字号略缩小
+   ============================================================ */
+@media (max-width: 600px) {
+  .banner {
+    min-height: 300px;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 20px 18px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr; /* 手机端技能卡片变成一列 */
+  }
+
+  .about-grid {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-inner {
+    justify-content: center;
+  }
+}

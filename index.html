@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>陈星浩 · 求职个人主页</title>
+  <meta name="description" content="陈星浩的个人求职主页，求职方向：AI 数据训练师 / 数据实习生">
+  <!-- 本地样式表，全部相对路径，无外部 CDN，可直接部署 Gitee Pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= 导航栏（模块索引，一眼看清全部模块） ================= -->
+  <nav class="topnav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#banner">陈星浩</a>
+      <div class="nav-links">
+        <a href="#about">个人信息</a>
+        <a href="#intention">求职意向</a>
+        <a href="#skills">专业技能</a>
+        <a href="#projects">实训项目</a>
+        <a href="#education">教育背景</a>
+        <a href="#honors">证书荣誉</a>
+        <a href="#selfeval">自我评价</a>
+        <a href="#learning">学习日志</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= 模块1：banner 头部（我是谁） ================= -->
+  <header id="banner" class="banner">
+    <div class="banner-content">
+      <h1>陈星浩</h1>
+      <p class="banner-slogan">AI 数据训练师 / 数据实习生 · 用细致与数据说话</p>
+      <p class="banner-sub">福州 · 专业排名 1/48 · HCIA-AI 华为认证</p>
+      <a class="btn-primary" href="#about">查看我的主页</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ================= 模块2：个人信息 ================= -->
+    <section id="about" class="card">
+      <h2 class="card-title"><span class="num">02</span>个人信息</h2>
+      <div class="about-grid">
+        <img class="avatar" src="./assets/avatar.png" alt="陈星浩头像">
+        <ul class="info-list">
+          <li><b>姓名：</b>陈星浩</li>
+          <li><b>现居：</b>福建福州</li>
+          <li><b>电话：</b>13869641976</li>
+          <li><b>邮箱：</b>1403448136@qq.com
+            <button id="copyMail" class="btn-copy" type="button">复制邮箱</button>
+          </li>
+          <li><b>学校：</b>福州墨尔本理工职业学院</li>
+          <li><b>专业：</b>人工智能技术应用（专业排名 1/48）</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 模块3：求职意向 ================= -->
+    <section id="intention" class="card">
+      <h2 class="card-title"><span class="num">03</span>求职意向</h2>
+      <ul class="intention-list">
+        <li><span class="tag">目标岗位</span>AI 数据训练师 / 数据实习生（福州云之景）</li>
+        <li><span class="tag">工作地点</span>福州仓山</li>
+        <li><span class="tag">期望薪资</span>100-160 元/天</li>
+        <li><span class="tag">到岗时间</span>【到岗时间请补充，例如：可随时到岗】</li>
+        <li><span class="tag">成长规划</span>匹配岗位“质检 → 组长 → 主管”晋升路径，愿意从标注基础岗做起</li>
+      </ul>
+    </section>
+
+    <!-- ================= 模块4：专业技能（对应 JD 关键词） ================= -->
+    <section id="skills" class="card">
+      <h2 class="card-title"><span class="num">04</span>专业技能</h2>
+      <ul class="skill-grid">
+        <li class="skill-item">
+          <h3>电脑操作 <span class="level level-good">熟练</span></h3>
+          <p>熟练使用 Windows 系统，独立完成文件管理、系统设置、软件安装</p>
+        </li>
+        <li class="skill-item">
+          <h3>办公软件 <span class="level level-good">熟练</span></h3>
+          <p>熟练使用 Word/Excel，完成数据录入、表格整理、文档排版</p>
+        </li>
+        <li class="skill-item">
+          <h3>数据整理 <span class="level level-good">熟练</span></h3>
+          <p>按规则完成数据分类、归档与排序（整理班级档案 48 份）</p>
+        </li>
+        <li class="skill-item">
+          <h3>数据标注 <span class="level level-basic">了解·基础</span></h3>
+          <p>了解文本/图像多模态标注规则，完成课堂标注练习</p>
+        </li>
+        <li class="skill-item">
+          <h3>质量自查 <span class="level level-basic">了解</span></h3>
+          <p>了解数据质量自查流程，课堂练习中对标注结果自行核对</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= 模块5：实训项目经历（带数字） ================= -->
+    <section id="projects" class="card">
+      <h2 class="card-title"><span class="num">05</span>实训项目经历</h2>
+      <div class="project-list">
+        <article class="project">
+          <div class="project-head">
+            <h3>手写数字识别实训</h3>
+            <span class="project-meta">实训周 · 2025.05</span>
+          </div>
+          <p>参与 CNN 手写数字识别项目，负责图像数据预处理与整理</p>
+          <div class="metric">模型准确率 <b>94%</b></div>
+        </article>
+        <article class="project">
+          <div class="project-head">
+            <h3>鸢尾花分类模型</h3>
+            <span class="project-meta">机器学习大作业 · 2025.04</span>
+          </div>
+          <p>担任组长，带领 2 人小组完成 SVM 分类建模与测试集评测</p>
+          <div class="metric">准确率 <b>96%</b> · 报告 <b>94 分</b></div>
+        </article>
+        <article class="project">
+          <div class="project-head">
+            <h3>多模态标注课堂练习</h3>
+            <span class="project-meta">专业课程 · 2024–2025</span>
+          </div>
+          <p>学习文本/图像多模态数据标注规则，完成课堂标注练习与结果自查（课堂级）</p>
+          <div class="metric">覆盖文本 / 图像两类数据</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 模块6：教育背景 ================= -->
+    <section id="education" class="card">
+      <h2 class="card-title"><span class="num">06</span>教育背景</h2>
+      <div class="edu">
+        <div class="edu-head">
+          <h3>福州墨尔本理工职业学院</h3>
+          <span class="project-meta">2024.09 – 2027.06</span>
+        </div>
+        <p>人工智能技术应用专业（专科）</p>
+        <ul class="edu-list">
+          <li>专业排名 1/48，平均绩点 3.9，获校级一等奖学金</li>
+          <li>主修：Python 程序设计（92 分）、机器学习、数据结构与算法（90 分）、计算机网络基础</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 模块7：证书荣誉 ================= -->
+    <section id="honors" class="card">
+      <h2 class="card-title"><span class="num">07</span>证书荣誉</h2>
+      <ul class="honor-list">
+        <li><span class="honor-name">HCIA-AI 华为认证人工智能工程师</span><span class="honor-date">2025.06</span></li>
+        <li><span class="honor-name">校级大学生 Python 编程竞赛 三等奖</span><span class="honor-date">2025.04</span></li>
+        <li><span class="honor-name">校级一等奖学金、三好学生</span><span class="honor-date">2024–2025 学年</span></li>
+      </ul>
+    </section>
+
+    <!-- ================= 模块8：自我评价 ================= -->
+    <section id="selfeval" class="card">
+      <h2 class="card-title"><span class="num">08</span>自我评价</h2>
+      <p class="self-text">
+        专业排名 <b>1/48</b>，实训项目准确率 <b>94%–96%</b>，累计整理班级档案与活动记录 <b>68 份</b>；
+        做事细致、按规范稳定交付，愿意从标注基础岗做起，匹配岗位“质检 → 组长 → 主管”成长路径。
+      </p>
+    </section>
+
+    <!-- ================= 模块9：学习日志（进阶挑战1，内容来自第3册 JD 对表"我要补的清单"，零虚构） ================= -->
+    <section id="learning" class="card card-accent">
+      <h2 class="card-title"><span class="num">09</span>学习日志 · 我最近在学</h2>
+      <ol class="learning-list">
+        <li>正在学习商业标注工具实操：LabelImg / Label Studio（目标：从课堂级到企业级工具会用）</li>
+        <li>正在学习企业级质检标准与流程（对应岗位“质检 → 组长 → 主管”晋升路径）</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- ================= 底部：下载简历（进阶挑战3）+ 主页URL与二维码（第5册上线/进阶挑战1） ================= -->
+  <footer class="footer">
+    <a class="btn-download" href="./assets/resume.pdf" download>下载我的简历（PDF）</a>
+    <div class="qr-block">
+      <img class="qr-img" src="./assets/qr.png" alt="我的主页二维码">
+      <p class="qr-text">扫码访问我的主页<br>
+        <a class="qr-link" href="https://c11329.github.io/my-homepage/" target="_blank">c11329.github.io/my-homepage</a>
+      </p>
+    </div>
+    <p class="footer-note">© 2026 陈星浩 · 求职个人主页 · 已上线 GitHub Pages · 无外部 CDN</p>
+  </footer>
+
+  <script>
+    /* ==========================================================
+       功能1：邮箱一键复制（原生 JS）
+       说明：本地 file:// 打开时 Clipboard API 可能不可用，
+             因此做了两套方案：Clipboard API + execCommand 兼容。
+       ========================================================== */
+    function showTip(btn, msg) {
+      var old = btn.textContent;
+      btn.textContent = msg;
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.textContent = old;
+        btn.classList.remove('copied');
+      }, 1500);
+    }
+
+    /* 兼容方案：临时创建隐藏文本框 + execCommand('copy') */
+    function fallbackCopy(text, btn) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      showTip(btn, ok ? '已复制到剪贴板' : '复制失败，请手动复制');
+    }
+
+    function copyEmail() {
+      var text = '1403448136@qq.com';
+      var btn = document.getElementById('copyMail');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+          showTip(btn, '已复制到剪贴板');
+        }).catch(function () {
+          fallbackCopy(text, btn);
+        });
+      } else {
+        fallbackCopy(text, btn);
+      }
+    }
+
+    document.getElementById('copyMail').addEventListener('click', copyEmail);
+  </script>
+</body>
+</html>
